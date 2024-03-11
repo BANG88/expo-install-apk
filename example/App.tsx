@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
-
-import * as ExpoInstallApk from 'expo-install-apk';
+import * as ExpoInstallApk from "expo-install-apk";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>{ExpoInstallApk.hello()}</Text>
+      <Pressable onPress={() => ExpoInstallApk.install("", "")}>
+        <Text>Install</Text>
+      </Pressable>
     </View>
   );
 }
@@ -13,8 +14,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
